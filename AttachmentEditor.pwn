@@ -101,16 +101,10 @@ public OnFilterScriptInit()
 public OnFilterScriptExit()
 {
 	for(new i; i < MAX_PLAYERS; i++)
-	{
 		if(gEditingAttachments[i])
-		{
 			for(new j; j < MAX_PLAYER_ATTACHED_OBJECTS; j++)
-			{
 				if(gIndexUsed[i][j])
 					RemovePlayerAttachedObject(i, j);
-			}
-		}
-	}
 }
 
 
@@ -173,9 +167,7 @@ ShowIndexList(playerid)
 				format(string, sizeof(string), "%sSlot %d (External)\n", string, i);
 		}
 		else
-		{
 			format(string, sizeof(string), "%sSlot %d\n", string, i);
-		}
 	}
 
 	ShowPlayerDialog(playerid, DIALOG_INDEX_SELECT, DIALOG_STYLE_LIST, "Attachment Editor / Index", string, "Accept", "Cancel");
@@ -191,9 +183,7 @@ ShowBoneList(playerid)
 	new string[512];
 	
 	for(new i; i < sizeof(AttachmentBones); i++)
-	{
 		format(string, sizeof(string), "%s%s\n", string, AttachmentBones[i]);
-	}
 
 	ShowPlayerDialog(playerid, DIALOG_BONE_SELECT, DIALOG_STYLE_LIST, "Attachment Editor / Bone", string, "Accept", "Cancel");
 }
@@ -320,9 +310,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			ShowMainEditMenu(playerid);
 		}
 		else
-		{
 			ShowMainEditMenu(playerid);
-		}
 
 		return 1;
 	}
@@ -334,9 +322,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			ShowMainEditMenu(playerid);
 		}
 		else
-		{
 			ShowMainEditMenu(playerid);
-		}
 	}
 
 	if(dialogid == DIALOG_BONE_SELECT)
@@ -347,9 +333,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			ShowMainEditMenu(playerid);
 		}
 		else
-		{
 			ShowMainEditMenu(playerid);
-		}
 	}
 	if(dialogid == DIALOG_COORD_INPUT)
 	{
